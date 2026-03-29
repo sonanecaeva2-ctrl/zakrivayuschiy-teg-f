@@ -17,10 +17,48 @@
   font-family: var(--main-font);
   font-variation-settings: var(--main-text-weight);
   font-size: var(--main-text-size);
-  line-height: 21px;
   background-image: 
     repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7 0 0.01%, #1a1a1a 100%);
   background-size: cover;
 }
+
+.page__block {
+  inline-size: clamp(375px, 90vw, 700px);
+  background-color: #fff;
+  margin: 100px auto;
+}
+
+/* стилизация шапки */
+
+.header {
+  /* из расчёта при моб. и деск. версии – (122px 130px), (16px 122.5px) */
+  padding: clamp(122px, 122px + 0.7vw, 130px) clamp(16px, 10vw, 122.5px);
+  font-family: var(--accent-font);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__logo {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.content {
+  line-height: 150%;
+}
+
+
+<header class="header">
+      <span class="header__title">&lt;/HTML&gt;</h1>
+      <h1 class="header__subtitle">Закрывающий тег</p>
+</header>
+
+
