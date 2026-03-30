@@ -9,4 +9,5 @@
   --block-size: clamp(375px, 90vw, 700px);
   --text-stroke-color: #fff;
   --bg-color: #fff;
+  --border: 2px solid #000;
 }
