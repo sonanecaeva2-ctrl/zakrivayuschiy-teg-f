@@ -5,6 +5,8 @@
   --main-text-weight: 410;
   --title-weight: 715;
   --main-text-size: 18px;
-  --block-size: clamp(320px, 100%, 1440px);
-  --header-padding-block: 
+  --text-color: #000;
+  --block-size: clamp(375px, 90vw, 700px);
+  --text-stroke-color: #fff;
+  --bg-color: #fff;
 }
