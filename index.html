@@ -268,20 +268,30 @@
             </button>
           </div>
         </li>
-      </ul>
-      <footer class="footer">
-        <button class="footer__button">
-          <use class="save-icon"></use>
-          <span class="button__text">Сохранить на память</span>
-        </button>
-      </footer>
-      <dialog class="popup">
-          <use class="save-icon"></use>
-          <p class="popup__description">Вставьте дискету, чтобы продолжить</p>
-          <button class="popup__button">
-            <span class="button__text">ОК</span>
+        <li class="cards-list__item-save">
+          <button class="list-item__save-button"
+            onclick="window['save-id'].showModal()" 
+            aria-controls="save-id">
+            <svg class="save-icon" viewBox="0 0 28 28">
+              <use href="./svg/floppy.svg#floppy"></use>
+            </svg>
+            <span class="button__text">Сохранить на память</span>
           </button>
-        </dialog>
+        </li>
+      </ul>
+      <dialog class="popup" id="save-id">
+        <div class="popup__text">
+          <svg class="popup__save-icon" viewBox="0 0 39 39">
+                <use class="popup__save-icon" href="./svg/floppy.svg#floppy"></use>
+              </svg>
+            <p class="popup__description">Вставьте дискету, чтобы продолжить</p>
+        </div>
+          <button class="popup__button"
+            onclick="window['save-id'].close()">
+            <span class="visually-hidden">Закрыть окно</span>
+            <span class="button__text">ОK</span>
+          </button>
+      </dialog>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
