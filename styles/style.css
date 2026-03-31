@@ -22,7 +22,7 @@
     repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7 0 0.01%, #1a1a1a 100%);
   background-size: cover;
-  color: var(--text-color);
+  color: var(--main-color);
 }
 
 .page__block {
@@ -54,11 +54,6 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
-/* .content {
-  line-height: 150%;
-}
-*/
-
 /* стилизация списка карточек и карточек */
 
 .cards-list {
@@ -67,11 +62,11 @@
   gap: 50px;
   width: fit-content;
   margin: 0 auto 100px;
-  border: 1px solid #000;
+  border: 1px solid var(--main-color);
 }
 
 .cards-list__item {
-  border: 1px solid #000;
+  border: 1px solid var(--main-color);
   border-bottom: var(--border);
 }
 
@@ -183,7 +178,13 @@
 .card__icon-button {
   border: none;
   background-color: transparent;
-  padding: 0;
+  padding: 4px;
+  transition: outline 0.3s ease;
+}
+
+.like-icon {
+  width: 27px;
+  height: 100%;
 }
 
 .card__like-button {
@@ -192,13 +193,53 @@
   padding: 12px 37px;
 }
 
-/* стилизация кнопки сохранения */
+/* стили при эффектах */
+
+.button {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--main-color);
+}
 
 .button__text {
+  position: relative;
+  color: var(--button-color);
+  mix-blend-mode: difference;
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 90%;
 }
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: var(--border);
+}
+
+/* стилизация кнопки сохранения */
 
 .cards-list__item-save {
   margin: 0 auto;
@@ -212,9 +253,11 @@
   gap: 8px;
   padding: 20px 20.5px;
   border: var(--border);
+  color: var(--button-color);
 }
 
 .save-icon {
+  mix-blend-mode: difference;
   width: 21px;
   height: 21px;
 }
