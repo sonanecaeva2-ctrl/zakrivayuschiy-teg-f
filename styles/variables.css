@@ -13,4 +13,7 @@
   --border: 2px solid #000;
   --animation-color: #FF0000;
   --fill-color: black;
+  --bg-image: repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(#e7e7e7 0 0.01%, #1a1a1a 100%);
 }

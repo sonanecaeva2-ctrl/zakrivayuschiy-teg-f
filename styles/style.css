@@ -14,10 +14,7 @@
   color: var(--main-color);
   font-family: var(--main-font);
   font-size: var(--main-text-size);
-  background-image: 
-    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
-    repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
-    linear-gradient(#e7e7e7 0 0.01%, #1a1a1a 100%);
+  background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
   min-inline-size: 320px;
@@ -49,6 +46,7 @@
 
 .header__logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  cursor: pointer;
 }
 
 .header__title {
@@ -63,11 +61,10 @@
   gap: 50px;
   width: fit-content;
   margin: 0 auto 100px;
-  border: 1px solid var(--main-color);
 }
 
 .cards-list__item {
-  border: 1px solid var(--main-color);
+  border: var(--border);
   border-bottom: var(--border);
 }
 
@@ -128,35 +125,35 @@
 
 /* фильтры для изображений */
 
-.inspiration-image {
+.contrast-image {
   filter: contrast(1.7) hue-rotate(20deg);
 }
 
-.cope-image {
+.grayscale-image {
   filter: contrast(1.2) grayscale(0.2);
 }
 
-.work-image {
+.sepia-image {
   filter: sepia(0.6);
 }
 
-.intime-image {
+.blur-image {
   filter: blur(5px);
 }
 
-.thx-image {
-  filter: contrast(1) brightness(1);
+.brightness-image {
+  filter: contrast(1.1) brightness(1.1);
 }
 
-.late-image {
+.saturate-image {
   filter: saturate(1.7);
 }
 
-.change-image {
+.saturate-little__image {
   filter: saturate(1.2);
 }
 
-.ican-image {
+.only-contrast__image {
   filter: contrast(1.2);
 }
 
@@ -173,7 +170,7 @@
   justify-content: end;
   align-items: end;
   gap: 5px;
-  padding: 25px;
+  padding: 0px 25px 25px;
 }
 
 .card__icon-button {
@@ -189,7 +186,6 @@
 }
 
 .card__like-button {
-  border: var(--border);
   padding: 6px 22px;
   background-color: transparent;
   inline-size: 130px;
@@ -202,11 +198,15 @@
   overflow: hidden;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  border: var(--border);
 }
 
 .button:focus {
-  box-shadow: 2px 2px 0 var(--main-color);
   outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--main-color);
 }
 
 .button__text {
@@ -245,11 +245,11 @@
 
 /* стилизация кнопки сохранения */
 
-.cards-list__item-save {
+.save {
   margin: 0 auto;
 }
 
-.list-item__save-button {
+.save-button {
   display: flex;
   flex-direction: row;
   align-items: center;
