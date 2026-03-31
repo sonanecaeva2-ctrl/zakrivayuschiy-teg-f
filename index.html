@@ -15,7 +15,7 @@
   </head>
   <body class="page">
     <header class="header page__block">
-      <span class="header__logo" href="#0">&lt;/HTML&gt;</span>
+      <a class="header__logo" href="#0">&lt;/HTML&gt;</a>
       <h1 class="header__title">Закрывающий тег</h1>
     </header>
     <main class="content">
@@ -696,22 +696,20 @@
             </div>
           </article>
         </li>
-        <footer class="footer save">
-        <li class="cards-list__item-save">
-          <button
-            class="save-button button"
-            onclick="window['save-id'].showModal()"
-            aria-controls="save-id"
-            type="button"
-          >
-            <svg class="save-icon" viewBox="0 0 28 28">
-              <use href="./svg/floppy.svg#floppy"></use>
-            </svg>
-            <span class="button__text">Сохранить на память</span>
-          </button>
-        </li>
-        </footer>
       </ul>
+      <footer class="footer save">
+        <button
+          class="save-button button"
+          onclick="window['save-id'].showModal()"
+          aria-controls="save-id"
+          type="button"
+        >
+          <svg class="save-icon" viewBox="0 0 28 28">
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+          <span class="button__text">Сохранить на память</span>
+        </button>
+      </footer>
       <dialog class="popup" id="save-id">
         <div class="popup__text">
           <svg class="popup__save-icon" viewBox="0 0 28 28">
